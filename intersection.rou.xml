@@ -1,0 +1,45 @@
+<routes>
+    <vType id="car" accel="0.8" decel="4.5" sigma="0.5" length="5" minGap="2.5" maxSpeed="16.67" guiShape="passenger"/>
+    <vType id="ambulance" accel="1.5" decel="5.0" sigma="0.5" length="7" minGap="2.5" maxSpeed="25" guiShape="emergency" color="255,0,0" vClass="emergency"/>
+    
+    <!-- North Incoming -->
+    <route id="n_to_s" edges="N2C C2S"/> <!-- Straight -->
+    <route id="n_to_e" edges="N2C C2E"/> <!-- Left Turn -->
+    <route id="n_to_w" edges="N2C C2W"/> <!-- Right Turn -->
+    
+    <!-- South Incoming -->
+    <route id="s_to_n" edges="S2C C2N"/> <!-- Straight -->
+    <route id="s_to_e" edges="S2C C2E"/> <!-- Right Turn -->
+    <route id="s_to_w" edges="S2C C2W"/> <!-- Left Turn -->
+    
+    <!-- East Incoming -->
+    <route id="e_to_w" edges="E2C C2W"/> <!-- Straight -->
+    <route id="e_to_n" edges="E2C C2N"/> <!-- Right Turn -->
+    <route id="e_to_s" edges="E2C C2S"/> <!-- Left Turn -->
+    
+    <!-- West Incoming -->
+    <route id="w_to_e" edges="W2C C2E"/> <!-- Straight -->
+    <route id="w_to_n" edges="W2C C2N"/> <!-- Left Turn -->
+    <route id="w_to_s" edges="W2C C2S"/> <!-- Right Turn -->
+    
+    <!-- Heavy Traffic Flows - INCREASED RIGHT TURN PROBABILITY -->
+    <flow id="flow_n_s" route="n_to_s" type="car" begin="0" end="1000" probability="0.15"/>
+    <flow id="flow_n_e" route="n_to_e" type="car" begin="0" end="1000" probability="0.05"/>
+    <flow id="flow_n_w" route="n_to_w" type="car" begin="0" end="1000" probability="0.15"/>
+    
+    <flow id="flow_s_n" route="s_to_n" type="car" begin="0" end="1000" probability="0.15"/>
+    <flow id="flow_s_w" route="s_to_w" type="car" begin="0" end="1000" probability="0.05"/>
+    <flow id="flow_s_e" route="s_to_e" type="car" begin="0" end="1000" probability="0.15"/>
+    
+    <flow id="flow_e_w" route="e_to_w" type="car" begin="0" end="1000" probability="0.20"/>
+    <flow id="flow_e_s" route="e_to_s" type="car" begin="0" end="1000" probability="0.05"/>
+    <flow id="flow_e_n" route="e_to_n" type="car" begin="0" end="1000" probability="0.20"/>
+    
+    <flow id="flow_w_e" route="w_to_e" type="car" begin="0" end="1000" probability="0.20"/>
+    <flow id="flow_w_n" route="w_to_n" type="car" begin="0" end="1000" probability="0.05"/>
+    <flow id="flow_w_s" route="w_to_s" type="car" begin="0" end="1000" probability="0.20"/>
+    
+    <!-- Ambulances (Increased for more realistic emergency scenarios) -->
+    <flow id="emg1" route="n_to_s" type="ambulance" begin="50" end="1000" probability="0.008"/>
+    <flow id="emg2" route="e_to_w" type="ambulance" begin="150" end="1000" probability="0.008"/>
+</routes>
