@@ -3,6 +3,8 @@
 **Next-Generation Intersection AI designed for Indian Traffic Conditions**
 
 A dual-AI traffic control system that abandons rigid western timers in favor of mathematical bidding and Deep Reinforcement Learning. It handles chaotic, heterogeneous driving conditions by processing spatial occupancy and penalizing wait times to mathematically eliminate gridlock.
+<img width="1431" height="544" alt="image" src="https://github.com/user-attachments/assets/9765f7f6-5280-4e84-ac09-8a2f7d4b4851" />
+
 
 ---
 
